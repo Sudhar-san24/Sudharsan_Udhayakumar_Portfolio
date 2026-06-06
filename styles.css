@@ -78,19 +78,18 @@ body{
 .hero .sub{ color:var(--muted); margin:0 0 1.2rem; }
 .cta-group{ display:flex; gap:.8rem; flex-wrap:wrap; }
 .hero-photo{ width:100%; max-width:360px; justify-self:end; aspect-ratio:1/1; object-fit:cover; border-radius:50%; border:2px solid rgba(255,255,255,.05); box-shadow:0 12px 34px rgba(2,8,23,.5), 0 0 0 6px rgba(14,165,233,.15), 0 0 40px rgba(99,102,241,.25); background:linear-gradient(135deg, rgba(14,165,233,.12), rgba(99,102,241,.12)); }
-#intro.section{ padding:2rem 0; }
-.intro-section{ display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:2rem; }
-.intro-copy h2{ margin:0 0 .6rem; }
-.intro-copy p{ margin:0; color:var(--muted); max-width:36ch; }
+.intro{ display:grid; grid-template-columns:1.1fr auto; align-items:center; gap:2rem; padding:1.5rem 0 2rem; }
+.intro-content h2{ font-size:clamp(1.3rem, 1rem + 1vw, 2rem); margin:0 0 .35rem; }
+.intro-sub{ margin:0; color:var(--muted); max-width:34ch; font-size:.95rem; line-height:1.5; }
 .intro-video-wrap{
-  width:100%; max-width:360px; justify-self:end;
+  width:280px; max-width:100%; justify-self:end; line-height:0;
   border-radius:16px; border:2px solid rgba(255,255,255,.05);
   box-shadow:0 12px 34px rgba(2,8,23,.5), 0 0 0 6px rgba(14,165,233,.15), 0 0 40px rgba(99,102,241,.25);
   background:linear-gradient(135deg, rgba(14,165,233,.12), rgba(99,102,241,.12));
   overflow:hidden;
 }
 .intro-video{
-  width:100%; height:auto; display:block;
+  width:100%; height:auto; display:block; vertical-align:top;
   object-fit:contain; object-position:center;
 }
 
@@ -146,8 +145,8 @@ body{
 @media (max-width: 880px){
   .hero{ grid-template-columns: 1fr; }
   .hero-photo{ justify-self:stretch; max-width:100%; }
-  .intro-section{ grid-template-columns:1fr; }
-  .intro-video-wrap{ justify-self:start; max-width:280px; }
+  .intro{ grid-template-columns:1fr; gap:1rem; padding:1.25rem 0 1.75rem; }
+  .intro-video-wrap{ justify-self:start; width:260px; }
   .timeline-item{ grid-template-columns: 1fr; }
   .nav-toggle{ display:inline-block; }
   .nav-links{ position:fixed; right:1rem; top:64px; background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:.6rem; flex-direction:column; gap:.2rem; display:none; }
