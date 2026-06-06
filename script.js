@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cvLink.addEventListener('click', async (e) => {
       const href = cvLink.getAttribute('href');
       if (!href) return;
-      const filename = cvLink.getAttribute('download') || href.split('/').pop() || 'Sudharsan_Resume.pdf';
+      const filename = cvLink.getAttribute('download') || href.split('/').pop() || 'Sudharsan_Udhayakumar_Resume_Portfolio.pdf';
       // On hosted sites, let the browser open/download the PDF directly
       if (location.protocol === 'http:' || location.protocol === 'https:') return;
       e.preventDefault();
