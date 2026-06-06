@@ -12,30 +12,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const cvLink = document.getElementById('download-cv');
-  if (cvLink) {
+  document.querySelectorAll('.download-cv').forEach((cvLink) => {
     cvLink.addEventListener('click', async (e) => {
       const href = cvLink.getAttribute('href');
       if (!href) return;
-      // Only intercept on local file preview to avoid browser restrictions
-      if (location.protocol !== 'file:') return; // allow default behaviour on hosted site
+      const filename = cvLink.getAttribute('download') || href.split('/').pop() || 'Sudharsan_Resume.pdf';
+      // On hosted sites, let the browser open/download the PDF directly
+      if (location.protocol === 'http:' || location.protocol === 'https:') return;
+      e.preventDefault();
       try {
-        e.preventDefault();
-        const res = await fetch(href, { method: 'HEAD', cache: 'no-cache' });
-        if (!res.ok) {
-          window.open(href, '_blank', 'noopener');
-          return;
-        }
+        const res = await fetch(href);
+        if (!res.ok) throw new Error('fetch failed');
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
-        a.href = href;
-        a.download = href.split('/').pop() || 'resume.pdf';
+        a.href = url;
+        a.download = filename;
         document.body.appendChild(a);
         a.click();
         a.remove();
+        URL.revokeObjectURL(url);
       } catch (_) {
         window.open(href, '_blank', 'noopener');
       }
     });
-  }
+  });
 });
 
