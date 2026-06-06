@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cvLink.addEventListener('click', async (e) => {
       const href = cvLink.getAttribute('href');
       if (!href) return;
+      // Only intercept on local file preview to avoid browser restrictions
+      if (location.protocol !== 'file:') return; // allow default behaviour on hosted site
       try {
         e.preventDefault();
         const res = await fetch(href, { method: 'HEAD', cache: 'no-cache' });

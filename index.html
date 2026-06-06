@@ -20,6 +20,7 @@
     <meta name="theme-color" content="#0ea5e9">
   </head>
   <body>
+    <div class="particles"></div>
     <header class="site-header">
       <nav class="nav container">
         <a class="brand" href="#home">SUDHARSAN</a>
@@ -37,7 +38,7 @@
       </nav>
     </header>
 
-    <main>
+    <main style="position:relative;z-index:2;">
       <section id="home" class="hero container">
         <div class="hero-content">
           <p class="eyebrow">Data Scientist • ML Engineer</p>
@@ -93,12 +94,23 @@
         <h2>Experience</h2>
         <div class="timeline">
           <article class="timeline-item">
-            <div class="time">Jun 2025 – Present</div>
+            <div class="time">Jun 2025 – Oct 2025</div>
             <div class="content">
-              <h3>Data Science & AI Program Learner — IIT Madras (GUVI)</h3>
+              <h3>Certified Professional in Advanced Programming — IITM Pravartak & GUVI</h3>
               <ul>
-                <li>Industry-aligned program covering ML, DL, NLP, and model deployment.</li>
+                <li>Completed advanced programming certification covering industry-standard software development practices.</li>
+                <li>Conducted by IITM Pravartak Technologies Foundation (Technology Innovation Hub of IIT Madras) in partnership with GUVI & HCL.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="time">Jun 2025 – Aug 2025</div>
+            <div class="content">
+              <h3>Master Data Science Program — GUVI & HCL (IITM Incubated)</h3>
+              <ul>
+                <li>Completed all modules of an industry-aligned program covering ML, DL, NLP, and model deployment.</li>
                 <li>Hands-on with transfer learning, clustering, anomaly detection, and zero-shot learning.</li>
+                <li>Partnered with IITM Pravartak, IIM, and Google for Education.</li>
               </ul>
             </div>
           </article>
@@ -171,14 +183,24 @@
       </section>
 
       <section id="certifications" class="section container">
-        <h2>Certificates</h2>
-        <ul class="list">
-          <li>Machine Learning & AI Services on AWS — IITM-GUVI</li>
-          <li>Advanced Diploma in Python Programming — CSC</li>
-          <li>IoT, Image Processing, Machine Learning — NPTEL</li>
-          <li>GenAI Powered Data Analytics — Tata</li>
-          <li>Data Science and Analytics — IITM-GUVI</li>
-        </ul>
+        <div class="certifications-grid">
+          <div class="cert-content">
+            <h2>Certificates</h2>
+            <ul class="list">
+              <li><strong>Certified Professional in Advanced Programming</strong> (Jun – Oct 2025) — IITM Pravartak & GUVI</li>
+              <li><strong>Master Data Science Program</strong> (Jun – Aug 2025) — GUVI & HCL (IITM Incubated)</li>
+              <li>Machine Learning & AI Services on AWS — IITM-GUVI</li>
+              <li>Advanced Diploma in Python Programming — CSC</li>
+              <li>IoT, Image Processing, Machine Learning — NPTEL</li>
+              <li>GenAI Powered Data Analytics — Tata</li>
+              <li>Data Science and Analytics — IITM-GUVI</li>
+            </ul>
+          </div>
+          <div class="cert-gallery">
+            <img class="cert-photo" src="assets/guvi-advanced-programming-cert.png" alt="Certified Professional in Advanced Programming certificate">
+            <img class="cert-photo" src="assets/guvi-master-data-science-cert.png" alt="GUVI Master Data Science Program Certificate of Completion">
+          </div>
+        </div>
       </section>
 
       <section id="research" class="section container">
